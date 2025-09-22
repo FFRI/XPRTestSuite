@@ -299,7 +299,7 @@ SheepSwapRemediator {
 ```
 </details>
 
-The enumeration of SafariAppExtension targets for detection utilizes the `LSApplicationExtensionRecord` class from the CoreServices framework. A sample application that uses this class to enumerate App Extensions is available at [enum_appex.m](RemediationTest/enum_appex.m).
+The enumeration of SafariAppExtension targets for detection utilizes the `LSApplicationExtensionRecord` class from the CoreServices framework. A sample application that uses this class to enumerate App Extensions is available at [enum_appex.m](enum_appex.m).
 
 ## Samples detected by this scanning module
 
