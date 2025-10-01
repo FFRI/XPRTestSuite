@@ -44,7 +44,7 @@ rule macos_waternet_b
 
 WaterNetRemediator {
     File(searchDir: "~/Library/Application Support", regexp: "/(([a-zA-Z0-9]{19,40})|([a-zA-Z0-9]{39}/[a-zA-Z0-9]{39}))/(helper|main|m|h)$", searchDepth: 3) {
-        FileYara(constraint: YaraMatcher(waterNetYara))
+        FileYara(YaraMatcher(waterNetYara))
         MaxFileSize(constraint: 20971520)
     }
     File(searchDir: "~/Library/Application Support", regexp: "/(([a-zA-Z0-9]{7,18})|([a-zA-Z0-9]{41,})|([a-zA-Z0-9]{40,}/[a-zA-Z0-9]{40,}))/(helper|main|m|h)$", searchDepth: 3) {

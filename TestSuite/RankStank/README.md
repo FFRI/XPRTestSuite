@@ -27,11 +27,11 @@ rule macos_rankstank {
 
 RankStankRemediator {
     File(path: "/Applications/3CX Desktop App.app/Contents/Frameworks/Electron Framework.framework/Versions/A/Libraries/libffmpeg.dylib") {
-        FileYara(constraint: YaraMatcher(rankStankYara))
+        FileYara(YaraMatcher(rankStankYara))
     }
     // NOTE: File(predicate: NSPredicate, @FileRemediationBuilder fileRemediationBuilder: @escaping () -> [AnyFileCondition]) seems broken. So, file remediation based on NSPredicate is not performed.
     File(predicate: NSPredicate(format: "kMDItemDisplayName == 'libffmpeg.dylib'")) {
-        FileYara(constraint: YaraMatcher(rankStankYara))
+        FileYara(YaraMatcher(rankStankYara))
     }
     File(path: "~/Library/Application Support/3CX Desktop App/.main_storage") {
         // emptyArray (it means that if this file exists, it will be deleted unconditionally)
