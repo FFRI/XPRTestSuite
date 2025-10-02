@@ -1419,7 +1419,7 @@ AdloadRemediator {
     // Note: function symbols of XProtectRemediatorAdload are stripped, so the function name does not express the actual function name
     for file in enumCrontabExecutables("~/.crontab") {
         File(path: file) {
-            FileMacho(false)
+            FileMacho(true)
             FileNotarised(false)
             FileYara(YaraMatcher(adloadYara))
         }
